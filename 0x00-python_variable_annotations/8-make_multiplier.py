@@ -5,6 +5,6 @@ import typing
 
 def make_multiplier(multiplier: float) -> typing.Callable[[float], float]:
     """make a multiplier return function that multiplies"""
-    def fun(multiplier: float) -> float:
-        return multiplier * multiplier
+    def fun(v: float) -> float:
+        return multiplier * v
     return fun
