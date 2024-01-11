@@ -3,7 +3,7 @@
 import typing
 
 
-def zoom_array(lst: typing.Tuple[any, ...], factor: int = 2) -> typing.List:
+def zoom_array(lst: typing.Tuple[typing.any, ...], factor: int = 2) -> typing.List:
     """zoom for array"""
     zoomed_in: typing.Tuple = [
         item for item in lst
