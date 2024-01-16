@@ -7,7 +7,7 @@ import  typing
 
 async def async_comprehension() -> typing.List[float]:
     """async comprehension function"""
-    result: typing.List[float] = []
+    result = []
     async for i in async_generator():
         result.append(i)
     return result
