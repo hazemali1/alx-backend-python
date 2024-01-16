@@ -10,6 +10,7 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """wait loof"""
     lis: typing.List[float] = []
+    llis: typing.List[float] = []
     for _ in range(n):
         t: float = wait_random(max_delay)
         lis.append(t)
