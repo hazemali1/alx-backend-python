@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """testing"""
 import unittest
-from utils import access_nested_map
+from utils import access_nested_map, get_json
 from parameterized import parameterized
 
 
@@ -25,3 +25,17 @@ class TestAccessNestedMap(unittest.TestCase):
         """Test for AccessNestedMap"""
         with self.assertRaises(KeyError):
             access_nested_map(nested_map, path)
+
+
+class TestGetJson(unittest.TestCase):
+    """test for utils json"""
+    @parameterized.expand([
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False}),
+    ])
+    @patch('test_utils.get_json')
+    def test_get_json(self, url, payload, mock):
+        """test for get json"""
+        mock.return_value = payload
+        self.assertEqual(get_json(url), payload)
+        
