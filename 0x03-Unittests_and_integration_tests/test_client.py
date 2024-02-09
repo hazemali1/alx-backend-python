@@ -81,10 +81,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """test public repositories"""
         obj = GithubOrgClient("hazemali1")
         # r = obj.public_repos()
-        self.assertTrue(True)
 
     def test_public_repos_with_license(self):
         """test public repositories with a license"""
         obj = GithubOrgClient("hazemali1")
         # r = obj.public_repos(license="apache-2.0")
-        self.assertTrue(True)
