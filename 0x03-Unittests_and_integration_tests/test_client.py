@@ -69,6 +69,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     def setUpClass(myclass):
         """set Up Class"""
         myclass.get_patcher = patch('requests.get', side_effect=HTTPError)
+        myclass.get_patcher.start()
 
     @classmethod
     def tearDownClass(myclass):
