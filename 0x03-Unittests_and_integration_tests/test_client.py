@@ -17,3 +17,4 @@ class TestGithubOrgClient(unittest.TestCase):
         """test for org"""
         obj = GithubOrgClient(name)
         self.assertEqual(obj.org(), mock.return_value)
+        mock.assert_called_once
