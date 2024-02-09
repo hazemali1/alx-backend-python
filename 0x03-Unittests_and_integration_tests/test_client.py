@@ -57,3 +57,20 @@ class TestGithubOrgClient(unittest.TestCase):
         obj = GithubOrgClient("hazemali1")
         result = obj.has_license(k, v)
         self.assertEqual(r, result)
+
+
+@parameterized_class(
+    ("org_payload", "repos_payload", "expected_repos", "apache2_repos"),
+    TEST_PAYLOAD
+)
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """test for GithubOrgClient using Integration test"""
+    @classmethod
+    def setUpClass(myclass):
+        """set Up Class"""
+        myclass.get_patcher = patch('requests.get', side_effect=HTTPError)
+
+    @classmethod
+    def tearDownClass(myclass):
+        """tear Down Class"""
+        myclass.get_patcher.stop()
